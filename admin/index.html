@@ -22,7 +22,7 @@
     <input type="text" name="penulis" placeholder="siapa kamu?" required>
 
     <label>Thumbnail</label>
-    <input type="url" name="thumbnail" placeholder="gambar thumbnail berita" value="https://raw.githubusercontent.com/up2kntb/up2kntb/refs/heads/main/img/thumbnail.jpg">
+    <input type="url" name="thumbnail" placeholder="gambar thumbnail berita">
 
     <label>Link Gambar (Opsional)</label>
     <input type="url" name="gambar_1" placeholder="Masukkan link gambar pertama (opsional)">
@@ -66,7 +66,7 @@
             tanggal: form.tanggal.value,
             isi: form.isi.value,
             penulis: form.penulis.value,
-            thumbnail: form.thumbnail.value,
+            thumbnail: form.thumbnail.value||"https://raw.githubusercontent.com/up2kntb/up2kntb/refs/heads/main/img/thumbnail.jpg",
             gambar_1: form.gambar_1.value,
             gambar_2: form.gambar_2.value,
             gambar_3: form.gambar_3.value,
