@@ -39,7 +39,7 @@
       const form = e.target;
 
       // Ambil semua data dari SheetDB
-      fetch("https://sheetdb.io/api/v1/xxx") //jangan lupa ganti ID Sheet DB !!!
+      fetch("https://sheetdb.io/api/v1/https://sheetdb.io/api/v1/jtll0a7sdmup2") //jangan lupa ganti ID Sheet DB !!!
        .then(response => response.json())
        .then(dataSheet => {
         // Ambil ID terakhir (misalnya 'BR-005'), lalu ambil bagian angkanya
@@ -76,7 +76,7 @@
 
         // Kirim ke SheetDB
         // Jangan lupa ganti ID Sheet DB !!!
-       fetch("https://sheetdb.io/api/v1/xxx", {
+       fetch("https://sheetdb.io/api/v1/https://sheetdb.io/api/v1/jtll0a7sdmup2", {
          method: "POST",
          headers: { "Content-Type": "application/json" },
          body: JSON.stringify(data)
