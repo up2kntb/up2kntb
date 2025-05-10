@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percobaan kirim Google Sheet</title>
+</head>
+<body>
+    <form name="Press Release UP2K">
+        <input name="id" type="number" placeholder="masukkan Id Berita" required>
+        <button type="submit">Publikasikan</button>
+    </form>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/library/d/14ddhO8OjJAR-UniIs9_UN0fQAipjhFChSWWEFsYMoY9-Yq9ALCLf-pdQ/2'
+        const form = document.forms['Press Release UP2K']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
