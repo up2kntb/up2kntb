@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>UP2K NTB - Form Rilis Berita</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Form Rilis Berita</h2>
+  <form id="release-form">
+    <label>Judul Berita</label>
+    <input type="text" name="judul" placeholder="Ada berita apa nih?" required>
+
+    <label>Tanggal Publikasi</label>
+    <input type="date" name="tanggal" required>
+
+    <label>Isi Berita</label>
+    <textarea name="isi" rows="30" placeholder="isi beritanya apa?" required></textarea>
+
+    <label>Penulis</label>
+    <input type="text" name="penulis" placeholder="siapa kamu?" required>
+
+    <label>Thumbnail</label>
+    <input type="url" name="thumbnail" placeholder="gambar thumbnail berita">
+
+    <label>Link Gambar (Opsional)</label>
+    <input type="url" name="gambar_1" placeholder="Masukkan link gambar pertama (opsional)">
+    <input type="url" name="gambar_2" placeholder="Masukkan link gambar kedua (opsional)">
+    <input type="url" name="gambar_3" placeholder="Masukkan link gambar ketiga (opsional)">
+    <input type="url" name="gambar_4" placeholder="Masukkan link gambar keempat (opsional)">
+
+    <button type="submit">Kirim Rilis</button>
+  </form>
+
+  <script>
+    document.getElementById("release-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+
+      // Ambil semua data dari SheetDB
+      fetch("https://sheetdb.io/api/v1/xxx") //jangan lupa ganti ID Sheet DB !!!
+       .then(response => response.json())
+       .then(dataSheet => {
+        // Ambil ID terakhir (misalnya 'BR-005'), lalu ambil bagian angkanya
+        let lastNumber = 0;
+        for (let row of dataSheet) {
+          if (row.id) {
+            const match = row.id.match(/BR-(\d+)/);
+          if (match) {
+            const num = parseInt(match[1]);
+          if (num > lastNumber) lastNumber = num;
+          }
+          }
+        }
+
+
+        // Tambahkan 1 dan format jadi 3 digit
+        const newId = 'BR-' + String(lastNumber + 1).padStart(3, '0');
+
+        // Data yang akan dikirim
+        const data = {
+          data: {
+            id: newId,
+            judul: form.judul.value,
+            tanggal: form.tanggal.value,
+            isi: form.isi.value,
+            penulis: form.penulis.value,
+            thumbnail: form.thumbnail.value,
+            gambar_1: form.gambar_1.value,
+            gambar_2: form.gambar_2.value,
+            gambar_3: form.gambar_3.value,
+            gambar_4: form.gambar_4.value
+          }
+        };
+
+        // Kirim ke SheetDB
+        // Jangan lupa ganti ID Sheet DB !!!
+       fetch("https://sheetdb.io/api/v1/xxx", {
+         method: "POST",
+         headers: { "Content-Type": "application/json" },
+         body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => alert("Rilis berita berhasil dikirim dengan ID: " + newId))
+        .catch(err => alert("Gagal mengirim data."));
+      })
+      .catch(err => {
+        console.error("Gagal mengambil data:", err);
+       alert("Gagal membaca ID terakhir.");
+      });
+    });
+  </script>
+
+</body>
+</html>
