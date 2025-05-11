@@ -1,14 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    max-width: fit-content;
-    margin: 2rem auto;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
 
-  input, textarea {
-    width: 100%;
+  .frame{
+    border: 1px solid #ccc;
+    height: fit-content;
+    width: 60%;
+    align-items: center;
+    padding: 0 10px 10px 10px;
+    border-radius: 1%;
+  }
+
+  label{
+    display: block;
+  }
+
+  input{
+    width: 95%;
     padding: 0.5rem;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
@@ -31,4 +42,8 @@ body {
 
   h2 {
     text-align: center;
+  }
+
+  .isi{
+    height: 600px;
   }
