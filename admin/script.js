@@ -7,7 +7,7 @@ const quill = new Quill('#isi', {
     const form = e.target;
 
     // Ambil semua data dari SheetDB
-    fetch("https://sheetdb.io/api/v1/jtll0a7sdmup2") //jangan lupa ganti ID Sheet DB !!!
+    fetch("https://sheetdb.io/api/v1/xxx") //jangan lupa ganti ID Sheet DB !!!
      .then(response => response.json())
      .then(dataSheet => {
       // Ambil ID terakhir (misalnya 'BR-005'), lalu ambil bagian angkanya
@@ -44,7 +44,7 @@ const quill = new Quill('#isi', {
 
       // Kirim ke SheetDB
       // Jangan lupa ganti ID Sheet DB !!!
-     fetch("https://sheetdb.io/api/v1/jtll0a7sdmup2", {
+     fetch("https://sheetdb.io/api/v1/xxx", {
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify(data)

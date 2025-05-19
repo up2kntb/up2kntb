@@ -1,0 +1,90 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Helvetica-FF,Arial,Tahoma,sans-serif;
+}
+
+.container{
+  display: grid;
+}
+
+.header{
+  padding-left: 20px;
+}
+
+/* bagian navbar */
+.navbar{
+  padding-left: 20px;
+  display: inline-flex;
+  background-color: aliceblue;
+}
+
+.beranda{
+  padding-right: 5px;
+}
+
+/* bagian tubuh website */
+.frame{
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr;
+}
+
+/* bagian whatsnew*/
+.whatsnew{
+  padding-left: 20px;
+}
+
+/* bagian rilis berita */
+.section01{
+  padding-left: 20px;
+}
+
+.release-thumb{
+  width: 100px;
+  padding-top: 15px;
+}
+
+.release-card{
+  display: flex;
+  padding-bottom: 5px;
+}
+
+.release-content{
+  padding-left: 10px;
+}
+
+/* bagian konten video */
+.section02{
+  padding-left: 20px;
+  grid-area: 1 / 2 / span 2 / span 2; /*artinya adalah section02 dimulai dari baris 1 dan kolom 2, dan di perpanjang 2 baris dan 1 kolom*/
+}
+
+.scroll-wrapper {
+  display: flex;
+  gap: 8rem;
+  overflow-x: auto;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+  height: 0px;
+}
+.scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+/* bagian footer */
+.footer{
+  border: none;
+}
+
+/* bagian css support */
+@media only screen and (max-width: 900px) {
+  .whatsnew{grid-area: 1 / span 3;}
+  .section01{grid-area: 2 / span 3;}
+  .section02{grid-area: 3 / span 3;}
+}
