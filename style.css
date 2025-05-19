@@ -79,7 +79,8 @@ body{
 
 /* bagian footer */
 .footer{
-  border: none;
+  background-color: aliceblue;
+  justify-items: center;
 }
 
 /* bagian css support */
