@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
     display: flex;
-
   }
 
   .frame{
