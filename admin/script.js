@@ -44,7 +44,7 @@ const quill = new Quill('#isi', {
 
       // Kirim ke SheetDB
       // Jangan lupa ganti ID Sheet DB !!!
-     fetch("https://sheetdb.io/api/v1/xxx", {
+     fetch("https://sheetdb.io/api/v1/jtll0a7sdmup2", {
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify(data)
