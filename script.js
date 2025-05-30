@@ -13,11 +13,12 @@ fetch("https://sheetdb.io/api/v1/smomo1mxyt3q5")
           const card = `
             <div class="release-card">
               <div class = "thumbnail">
-                <img src="${item.Thumbnail || 'img/note.jpg'}" class="release-thumb" alt="Thumbnail">
+                <img src="${item.gambar || 'img/note.jpg'}" class="release-thumb" alt="Thumbnail">
               </div>
               <div class="release-content">
                 <h5 class="release-title">${item.Judul}</h5>
                 <div class="release-meta">${item.Tanggal} | Penulis: ${item.Penulis}</div>
+                <div class="release-meta">${item.gambar}</div>
               </div>
             </div>
           `;

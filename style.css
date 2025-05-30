@@ -21,6 +21,13 @@ body{
   background-color: aliceblue;
 }
 
+.menu{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  font-size: medium;
+}
+
 .beranda{
   padding-right: 5px;
 }
