@@ -28,6 +28,10 @@ body{
   font-size: medium;
 }
 
+.tulis{
+  margin-left: 10px;
+}
+
 .beranda{
   padding-right: 5px;
 }
@@ -48,9 +52,16 @@ body{
   padding-left: 20px;
 }
 
+.release-title{
+  margin-top: 5px;
+}
+
 .release-thumb{
   width: 150px;
-  padding-top: 15px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
 }
 
 .release-card{
