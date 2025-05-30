@@ -18,7 +18,6 @@ fetch("https://sheetdb.io/api/v1/smomo1mxyt3q5")
               <div class="release-content">
                 <h5 class="release-title">${item.Judul}</h5>
                 <div class="release-meta">${item.Tanggal} | Penulis: ${item.Penulis}</div>
-                <div class="release-meta">${item.gambar}</div>
               </div>
             </div>
           `;
